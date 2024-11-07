@@ -5,4 +5,7 @@ import solc from 'solc';
 const inboxPath = path.resolve('contracts', 'Inbox.sol');
 const source = fs.readFileSync(inboxPath, 'utf8');
 
-export const contractInterface = solc.compile(source, 1).contracts[':Inbox']
+const compiledContract = solc.compile(source, 1).contracts[':Inbox']
+const Contractinterface = compiledContract.interface;
+const bytecode = compiledContract.bytecode;
+export { Contractinterface,bytecode };
