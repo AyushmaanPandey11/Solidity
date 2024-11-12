@@ -3,7 +3,7 @@ pragma solidity ^0.4.17;
 contract Lottery {
     address public manager;
     address[] public players;
-    
+
     function Lottery() public {
         manager = msg.sender;
     }
@@ -27,7 +27,9 @@ contract Lottery {
         require(msg.sender == manager);
         _;
     }
-    
+    function getBalance() public restricted view returns (uint) {
+        return this.balance;
+    }
     function getPlayers() public view returns (address[]) {
         return players;
     }
