@@ -2,7 +2,7 @@ import HDWalletProvider from "@truffle/hdwallet-provider";
 import Web3 from "web3";
 import { Contractinterface, bytecode } from "./compile.js";
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: path.resolve(".env") });
 
 const provider = new HDWalletProvider(
   process.env.MNEUMONIC_PASSWORD,
