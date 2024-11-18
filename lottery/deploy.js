@@ -2,6 +2,7 @@ import HDWalletProvider from "@truffle/hdwallet-provider";
 import Web3 from "web3";
 import { Contractinterface, bytecode } from "./compile.js";
 import dotenv from "dotenv";
+import path from "path";
 dotenv.config({ path: path.resolve(".env") });
 
 const provider = new HDWalletProvider(
